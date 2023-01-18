@@ -23,7 +23,7 @@ def scrape_updates(html_content: str) -> list:
     try:
         selector = Selector(html_content)
         html_content = selector.css(
-            ".cs-overlay-link div a::attr(href)").getall()
+            ".cs-overlay-link::attr(href)").getall()
     except (requests.exceptions.InvalidURL):
         return list
     else:
